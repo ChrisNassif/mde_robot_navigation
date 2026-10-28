@@ -1,6 +1,5 @@
+ROS2 Installation: https://docs.ros.org/en/jazzy/Installation/Ubuntu-Install-Debs.html
 
-
-sudo apt update && sudo apt upgrade
 
 sudo apt install ros-jazzy-navigation2 ros-jazzy-nav2-bringup
 sudo apt install ros-jazzy-robot-localization
