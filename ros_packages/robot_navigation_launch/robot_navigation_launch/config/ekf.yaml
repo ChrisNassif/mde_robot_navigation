@@ -1,0 +1,42 @@
+ekf_filter_node:
+  ros__parameters:
+    frequency: 50.0
+    sensor_timeout: 0.3
+    two_d_mode: true          # 2D Nav2 navigation (No Z axis, roll, pitch, etc etc)
+    publish_tf: true          # Publishes odom -> base_link transform
+
+    map_frame: map
+    odom_frame: odom
+    base_link_frame: base_link
+    world_frame: odom
+
+
+    odom0: /odometry/gps
+    # Matrix order: [x, y, z,
+    #                roll, pitch, yaw,
+    #                vx, vy, vz,
+    #                vroll, vpitch, vyaw,
+    #                ax, ay, az]
+    odom0_config: [true,  true,  false,
+                   false, false, false,
+                   false, false, false,
+                   false, false, false,
+                   false, false, false]
+    odom0_differential: false
+    odom0_queue_size: 10
+
+
+    imu0: /imu
+    # Matrix order: [x, y, z,
+    #                roll, pitch, yaw,
+    #                vx, vy, vz,
+    #                vroll, vpitch, vyaw,
+    #                ax, ay, az]
+    imu0_config: [false, false, false,
+                  false, false, true,   # Absolute yaw (aka heading)
+                  false, false, false,
+                  false, false, true,   # Yaw angular velocity (velocity about the z axis or vz)
+                  true,  false, false]  # Forward linear acceleration (acceleration about the x axis or ax)
+    imu0_differential: false
+    imu0_remove_gravitational_acceleration: true
+    imu0_queue_size: 10

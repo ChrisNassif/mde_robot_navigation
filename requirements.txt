@@ -1,0 +1,4 @@
+pygeomag
+pyserial
+datetime
+scipy
