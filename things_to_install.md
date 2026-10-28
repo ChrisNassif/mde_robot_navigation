@@ -7,3 +7,5 @@ sudo apt install ros-jazzy-robot-localization
 
 
 pip install -r requirements.txt
+
+bash create_udev_rules.sh
