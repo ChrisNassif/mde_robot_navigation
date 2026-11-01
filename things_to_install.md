@@ -163,7 +163,7 @@ curl -fL --retry 5 -C - \
   "$FILE_URL"
 ```
 
-**The file has a `.tar.gz` name but was actually an uncompressed GNU TAR archive in our successful download.** Using `tar -tzf` produced a `not in gzip format` error. We used `tar -tf` and `tar -xf` instead:
+**The file has a `.tar.gz` name but was actually an uncompressed GNU TAR archive.** Using `tar -tzf` produced a `not in gzip format` error. To fix this, use `tar -tf` and `tar -xf` instead:
 
 ```bash
 file "$ISAAC_ROS_WS/isaac_ros_assets/quickstart.tar.gz"
